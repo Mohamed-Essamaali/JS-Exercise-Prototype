@@ -93,8 +93,29 @@ Car.prototype.fill = function(gallons){
   return this.tank = this.tank + gallons;
 }
 Car.prototype.drive = function(distance){
+  let max_drive = this.tank*this.milesPerGallon;
+  this.odometer = this.odometer + distance;
+  this.tank = this.tank - distance/this.milesPerGallon;
 
-return this.odometer+distance;
+   if (distance<max_drive){
+    
+    return `I ran out of fuel at ${this.tank}`;
+      //this.tank*this.milesPerGallon}`;
+
+  }else 
+
+  if(this.tank==0){
+    return this.tank = 0;
+  }
+
+  
+  // gall_consumed = distance/this.milesPerGallon;
+  //remaining in tank
+  // this.tank = this.tank - gall_consumed;
+  // if (gallRemain<0){
+  //   return `I ran out of fuel at ${miles}`;
+  // }
+
 }
 
 /*
@@ -109,7 +130,9 @@ Person.call(this,name,age);
 
 this.favoriteToy= favoriteToy;
 }
-// Baby = new Person();
+// inherit Baby 
+Baby.prototype = Object.create(Person.prototype);
+// play method
 Baby.prototype.play = function(){
   return `Playing with ${this.favoriteToy}`;
 }
