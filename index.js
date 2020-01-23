@@ -142,10 +142,10 @@ Baby.prototype.play = function(){
   TASK 4
 
   In your own words explain the four principles for the "this" keyword below:
-  1. 
-  2. 
-  3. 
-  4. 
+  1. global binding: this refer to the console or the windows that javascript is running
+  2. implicit binding: by using dot this.Some to call function; object
+  3. new binding: create new atributes in object.
+  4. explicit binding: we use either call another object's atribute to use in new object or apply 
 */
 
 
